@@ -1,0 +1,67 @@
+<style>
+  .child {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 20px;
+  }
+  @media print {
+    .hidden {
+      visibility: hidden;
+    }
+  }
+  .parent {
+    padding: 1rem 1rem;
+    vertical-align: middle;
+    margin-left: 180px;
+  }
+</style>
+
+<input
+  type="text"
+  name="roll"
+  placeholder="Enter Enrollment No"
+  class="w3-input w3-border w3-round-large w3-col s4 hidden"
+  required
+/>
+<input
+  type="submit"
+  class="w3-button w3-blue w3-round-large w3-col s2 w3-margin-left hidden"
+/>
+<input
+  type="button"
+  value="Print"
+  class="w3-button w3-blue w3-round-large w3-col s2 w3-margin-left hidden"
+  onClick="window.print()"
+/>
+
+<div class="parent">
+  <div class="child"><img src="+b7+" width="150" class="center" /></div>
+  <div class="child" width="500px">
+    <table class="table table-bordered">
+      <tr>
+        <th>Enrollment No:</th>
+        <td>'+b0+'</td>
+      </tr>
+      <tr>
+        <th>Course:</th>
+        <td>'+b2+'</td>
+      </tr>
+      <tr>
+        <th>Name:</th>
+        <td>'+b4+'</td>
+      </tr>
+      <tr>
+        <th>Fathers Name:</th>
+        <td>'+b5+'</td>
+      </tr>
+      <tr>
+        <th>Addmission Date:</th>
+        <td>'+b3+'</td>
+      </tr>
+      <tr>
+        <th>Study Center:</th>
+        <td>'+b6+'</td>
+      </tr>
+    </table>
+  </div>
+</div>

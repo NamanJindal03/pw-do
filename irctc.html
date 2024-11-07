@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .container{
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid red;
+        }
+        .flex{
+            display: flex;
+        }
+        .list{
+            list-style: none;
+        }
+        
+        .btn{
+            padding: 1px 2px;
+        }
+        .specialBtn{
+            background-color: orange;
+            color: white
+        }
+        .colFlexDirection{
+            flex-direction: column;
+        }
+        .fixedGap{
+            column-gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="container" style="align-items: center;">
+        <div>
+            <span>Image 1</span>
+            <span>Image 2</span>
+        </div>
+        <div class="flex colFlexDirection">
+            <ul class="flex list fixedGap" >
+                <li>Ask Disha</li>
+                <li>Contact Us</li>
+                <li>Alerts</li>
+            </ul>
+            <div class="flex fixedGap">
+                <button class="btn specialBtn">Login</button>
+                <button class="btn">Register</button>
+                <button class="btn">Agent Login</button>
+            </div>
+        </div>
+        
+    </nav>
+</body>
+</html>
