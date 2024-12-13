@@ -35,27 +35,47 @@
 // })
 
 class Animal{
-    #sample 
+    #sample  //private variable -> private 
     #sample2
     constructor(name){
         this.#sample = name;
+        this.naman = 'abcd' //public
     }
-    get sample(){
+    get sam(){
         return this.#sample
     }
-    set sample(someVal){
+    set sam(someVal){
         this.#sample = someVal
     }
-    get sample2(){
-
+    validFuncToChangeSample(newValue){
+        this.#sample = newValue;
+        this.#pvtMethodAny()
     }
-    setSampleValue
+    #pvtMethodAny(){
+        console.log('called a pvt method')
+    }
+    //custom function to modify the vlaue of #sample. The value of #sample
+    //the access of #sample is restriced outside the class.
+    // setSampleValue
 }
 
+
 const rhino = new Animal('rhiinnoo');
-console.log(rhino.sample);
-rhino.sample = 'new rhino value';
-console.log(rhino.sample);
+// rhino.naman = 'llllll'; //from this we can see we are able to modify the things defined n a class as well
+rhino.sample = 'new property'
+// console.log(rhino)
+// console.log(rhino.sam)
+// rhino.sam = 'new name, done through proper method'
+// console.log(rhino.sam)
+rhino.validFuncToChangeSample('yes, I have changed it');
+console.log(rhino.sam)
+// rhino.#pvtMethodAny()
+
+
+// rhino.naman = 'yes'
+// console.log(rhino.sample);
+// rhino.sample = 'new rhino value';
+// console.log(rhino.sample);
 
 // rhino.#sample = 10;
 /* 
@@ -161,3 +181,102 @@ console.log(rhino.sample);
 // console.log(newDivElem);
 
 // mainContainerTag.append(newDivElem);
+
+// const newObj = {
+//     email : 'namanjindal@gmail.com',
+//     name: 'naman jindal',
+//     password : "12345",
+//     appType : "ecommerce"
+// }
+
+// JSON.parse()
+
+// const val = JSON.stringify(newObj);
+// console.log(newObj);
+// console.log(val);
+
+// const normal = JSON.parse(val);
+// console.log(normal);
+
+/* 
+    API -> communicate over a network -> 
+
+    browser does that for me -> 
+    xmlHttp ->
+    fetch ->>>>>>>>>>>>>>> frontend -> 
+    fetch ->>>>>>>>>>>>>>> frontend -> 
+    axios 
+// */
+
+// const res = fetch('https://fakestoreapi.com/products'); //makign an api call
+//     // console.log(res) //treat this code as synchronous code -> 
+// res.then((data)=>{
+//     console.log('data', data )
+//     return data.json(); //converting the stream into js obejct
+// })
+// .then((data)=>{
+//     console.log(data)
+// })
+
+// fetch("https://dummyjson.com/products/1", {})
+//   .then((response) => response.json()) //
+//   .then((data) => console.log(data))
+//   .catch((error) => console.log(error));
+
+function Sample(){
+    this.name = 'naman'
+}
+
+Sample.prototype.common = function(){
+    console.log('I am a common funciton which every instance will have')
+}
+const s1 = new Sample();
+s1.common();
+const s2 = new Sample();
+s2.common();
+
+//classes, extends -> these all ideally never were part of JS
+//internall whenever you call any such keyword -> 
+
+
+
+
+const funcExpress = function random(){
+    console.log('this si a function expresssion')
+}
+// funcExpress()
+const funcE2 = () => {
+
+}
+
+//IIFE -> immediately invoked function expressions
+
+(function random2(){
+    console.log('calling this')
+})()
+
+function step3(){
+    console.log('work done')
+}
+
+function step2(){
+    //do my own work 
+    step3()
+}
+
+function step1(step2, step3){
+    //do my own work
+    step2()
+}
+
+function manager(step1, step2, step3){
+    step1(step2, step3)
+}
+manager(()=>{}, ()=>{}, ()=>{})
+
+
+async function managerPromise(){
+    const ans = await step1();
+    const ans2= await step2();
+    const finalAns = await step3() 
+}
